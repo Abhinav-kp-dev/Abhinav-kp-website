@@ -16,9 +16,9 @@ export default defineConfig({
       jpg: { quality: 80 },
     }),
   ],
-  // Base path for deployment. Change to your deployment path as needed.
-  // When served at root (custom domain or local dev), keep as "/".
-  base: "/",
+  // Use relative asset paths so builds work both on repo subpaths (GitHub Pages)
+  // and root domains (custom domains) without per-environment config changes.
+  base: "./",
   build: {
     rollupOptions: {
       output: {
