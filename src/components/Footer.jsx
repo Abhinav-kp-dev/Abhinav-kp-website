@@ -1,0 +1,74 @@
+import styles from "../style";
+import { socialMedia, contactInfo } from "../data/siteConfig";
+import { motion } from 'framer-motion';
+import { email } from '../assets';
+
+const Footer = () => {
+  const hoverVariants = {
+    hover: {
+      scale: 1.1,
+      transition: { duration: 0.3, ease: 'easeInOut' },
+    },
+  };
+
+  return (
+    <section className={`${styles.flexCenter} py-4  px-8 flex-col mt-auto`}>
+      <div className="w-full flex flex-col sm:flex-row justify-between items-center ">
+        {/* Resume Button with Motion — hidden < 768px (lives in the mobile pause menu). */}
+        <motion.div
+          whileHover="hover"
+          variants={hoverVariants}
+          className="hidden sm:block mb-6 sm:mb-0 z-10"
+        >
+          <a
+            href={contactInfo.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white rock-surface text-xs py-2 px-4 pixel-shadow"
+          >
+            Resume
+          </a>
+        </motion.div>
+
+        {/* Social Media Icons — hidden < 768px (live in the mobile pause menu). */}
+        <div className="hidden sm:flex flex-wrap justify-center gap-3 mb-4 sm:mb-0 ">
+          {socialMedia.map((social) => (
+            <motion.div
+              key={social.id}
+              whileHover="hover"
+              variants={hoverVariants}
+              className="flex items-center rock-surface text-xs py-2 px-2"
+            >
+              <a href={social.link} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={social.icon}
+                  alt={social.link}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-[25px] h-[25px] object-contain cursor-pointer"
+                />
+              </a>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Email Button with Motion */}
+        <motion.div
+          whileHover="hover"
+          variants={hoverVariants}
+          className="sm:mb-0"
+        >
+          <a
+            href={`mailto:${contactInfo.email}`}
+            className="flex items-center text-white rock-surface text-xs py-2 px-4 pixel-shadow"
+          >
+            <img src={email} alt="Email Icon" loading="lazy" decoding="async" className="w-[25px] h-[15px] mr-2" />
+            {contactInfo.email}
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default Footer;
