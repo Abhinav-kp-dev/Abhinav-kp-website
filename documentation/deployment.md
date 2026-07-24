@@ -12,7 +12,7 @@ In GitHub: **Settings -> Pages -> Build and deployment -> Source -> "GitHub Acti
 
 ## Using a custom domain later
 
-1. In `vite.config.js`, ensure `base` is set to `"/"`.
+1. In `vite.config.js`, keep `base` set to `"./"` so assets resolve correctly on both repo subpaths and custom domains.
 2. Add a `public/CNAME` file containing your domain (e.g. `abhinavkp.com`).
 3. Point your DNS at GitHub Pages and set the domain under Settings -> Pages.
 
