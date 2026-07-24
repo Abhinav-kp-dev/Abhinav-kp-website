@@ -13,7 +13,7 @@
 
 
 import mineguardThumb from '../assets/mineguard.png';
-import cashCopilotThumb from '../assets/cash copilot.jpeg';
+import cashCopilotThumb from '../assets/cash-copilot.jpeg';
 import solvunoThumb from '../assets/solvuno.jpeg';
 import medosThumb from '../assets/medos.jpeg';
 import sihLogo from '../assets/sih-logo.png';
