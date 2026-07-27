@@ -87,7 +87,7 @@ export const aboutPage = {
   // ---- Closing call to action -------------------------------------------
   cta: {
     title: "Let's build something.",
-    body: "Got a project at the edge of hardware and sound? I'm listening.",
+    body: 'Open to internships, collaborations, and ambitious engineering challenges.',
     label: 'Get in touch',
     to: '/contact',
   },
